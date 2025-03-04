@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        // Generate a random captcha on load
+        function generateCaptcha() {
+            const captcha = Math.random().toString(36).substr(2, 5).toUpperCase();
+            document.getElementById('captchaText').textContent = captcha;
+            document.getElementById('generatedCaptcha').value = captcha;
+        }
+
+        // Validate captcha
+        function validateCaptcha() {
+            const enteredCaptcha = document.getElementById('captchaInput').value.trim();
+            const generatedCaptcha = document.getElementById('generatedCaptcha').value;
+            if (enteredCaptcha !== generatedCaptcha) {
+                alert('Captcha does not match. Please try again.');
+                return false;
+            }
+            return true;
+        }
+
+        window.onload = generateCaptcha;
+    </script>
+</head>
+<body style="background-image: url(https://img.freepik.com/premium-vector/internet-things-iot-devices-connectivity-concepts-network-cloud_74231-1679.jpg)">
+    <form action="home.html" method="GET" onsubmit="return validateCaptcha();">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="captcha">Captcha:</label>
+        <div id="captchaText" style="font-weight: bold; font-size: 18px; margin-bottom: 10px;"></div>
+        <input type="hidden" id="generatedCaptcha" name="generatedCaptcha">
+        <input type="text" id="captchaInput" placeholder="Enter the captcha" required>
+
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>

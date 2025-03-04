@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor Devices</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Monitor IoT Devices</h1>
+    </header>
+    <form action="/monitor" method="GET">
+        <label for="deviceSelect">Select Device:</label>
+        <select id="deviceSelect" name="deviceId" required>
+            <!-- Device options fetched dynamically -->
+            <option value="1">Device 1</option>
+            <option value="2">Device 2</option>
+        </select>
+        <button type="submit">Monitor</button>
+    </form>
+
+    <div id="monitorData">
+        <h2>Monitoring Data</h2>
+        <p>Battery Usage: 80%</p>
+        <p>Last Active: 10 minutes ago</p>
+        <p>Connected Users: 5</p>
+    </div>
+</body>
+</html>

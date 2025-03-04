@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Devices</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Manage IoT Devices</h1>
+    </header>
+    <form action="/manage" method="POST">
+        <label for="deviceId">Select Device:</label>
+        <select id="deviceId" name="deviceId" required>
+            <!-- Device options fetched dynamically -->
+            <option value="1">Device 1</option>
+            <option value="2">Device 2</option>
+        </select>
+
+        <label for="action">Action:</label>
+        <select id="action" name="action" required>
+            <option value="delete">Delete</option>
+            <option value="update">Update</option>
+        </select>
+
+        <label for="updateImage">Update Image (optional):</label>
+        <input type="file" id="updateImage" name="updateImage">
+
+        <button type="submit">Apply Action</button>
+    </form>
+</body>
+</html>

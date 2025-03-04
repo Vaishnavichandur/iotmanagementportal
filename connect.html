@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Devices</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Connect a New IoT Device</h1>
+    </header>
+    <form action="/connect" method="POST">
+        <label for="deviceName">Device Name:</label>
+        <input type="text" id="deviceName" name="deviceName" required>
+        
+        <label for="brand">Brand:</label>
+        <input type="text" id="brand" name="brand" required>
+        
+        <label for="type">Device Type:</label>
+        <input type="text" id="type" name="type" required>
+
+        <label for="image">Upload Image:</label>
+        <input type="file" id="image" name="image">
+        
+        <button type="submit">Connect Device</button>
+    </form>
+</body>
+</html>
